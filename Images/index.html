@@ -35,12 +35,10 @@
         /* ===== Header & Navbar ===== */
         header {
             position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 87, 34, 0.85);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: orangered; 
         }
 
         .nav {
@@ -80,6 +78,7 @@
             width: 100vw;
             height: 100vh;
             overflow: hidden;
+            padding-top: 70px;
         }
 
         .hero img {
@@ -296,25 +295,45 @@
             font-size: 0.9rem;
         }
 
-        /* ===== Responsive ===== */
-        @media (max-width: 768px) {
-            .nav {
-                flex-direction: column;
-                gap: 1rem;
-            }
+       /* ===== Responsive ===== */
+@media (max-width: 768px) {
+    header {
+        background-color: orangered; /* Keep same color */
+        height: auto;
+    }
 
-            .hero-text h1 {
-                font-size: 2rem;
-            }
+    .nav {
+        flex-direction: row;
+        gap: 1rem;
+        padding: 1rem 2rem; 
+    }
+    .nav a {
+    color: #FFF8E1;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: clamp(0.7rem, 2vw, 1.2rem); /* min 1rem, scales with viewport, max 1.2rem */
+    transition: all 0.3s ease;
+}
 
-            .hero-text p {
-                font-size: 1rem;
-            }
 
-            .cards-container {
-                flex-direction: column;
-            }
-        }
+    /* Offset hero section to avoid being hidden by navbar */
+    section.hero {
+        padding-top: 70px; /* approximate navbar height */
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .cards-container {
+        flex-direction: column;
+    }
+}
+
 
     </style>
 </head>
